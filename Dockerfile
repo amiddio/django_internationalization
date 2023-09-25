@@ -4,6 +4,8 @@ COPY src /app
 WORKDIR /app
 EXPOSE 8000
 
+RUN apk add --update gettext
+
 RUN pip install -r requirements.txt
 
 RUN adduser --disabled-password app-user
