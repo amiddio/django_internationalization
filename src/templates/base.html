@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'page:home' %}">{% trans "Home" %}</a> |
+        <a href="#">{% trans "Categories" %}</a> |
+        <a href="#">{% trans "Articles" %}</a> |
+        <a href="#">{% trans "Contact" %}</a>
+    </nav>
+    <div>
+    {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
