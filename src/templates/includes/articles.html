@@ -1,0 +1,11 @@
+{% load i18n %}
+{% for article in articles %}
+<div>
+    <a href="{{ article.get_absolute_url }}">
+        <h4>{{ article.name }}</h4>
+    </a>
+    {% trans 'Category' %}: <b>{{ article.category.name }}</b>
+    <div><i>{{ article.pub_datetime }}</i></div>
+    <div>{{ article.description|truncatewords:50 }}</div>
+</div>
+{% endfor %}

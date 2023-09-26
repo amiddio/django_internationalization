@@ -27,10 +27,11 @@
         <nav>
             <a href="{% url 'page:home' %}">{% trans "Home" %}</a> |
             <a href="#">{% trans "Categories" %}</a> |
-            <a href="#">{% trans "Articles" %}</a> |
+            <a href="{% url 'article:list' %}">{% trans "Articles" %}</a> |
             <a href="#">{% trans "Contact" %}</a>
         </nav>
     </div>
+    <br/>
     <div>
     {% block content %}{% endblock %}
     </div>

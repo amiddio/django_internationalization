@@ -6,5 +6,8 @@ __pycache__
 db.sqlite3
 venv/
 
+# Internationalization
+*.mo
+
 # Environments
 .env
