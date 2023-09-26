@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +6,31 @@
     <title>Title</title>
 </head>
 <body>
-    <nav>
-        <a href="{% url 'page:home' %}">{% trans "Home" %}</a> |
-        <a href="#">{% trans "Categories" %}</a> |
-        <a href="#">{% trans "Articles" %}</a> |
-        <a href="#">{% trans "Contact" %}</a>
-    </nav>
+    <div style="text-align: right">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% trans "Languages" %}:
+        <ul style="display: inline">
+            {% for language in languages %}
+            <li style="display: inline">
+                <a href="/{{ language.code }}/" {% if language.code == LANGUAGE_CODE %} class="selected"{% endif %}>
+                    {{ language.name_local }}
+                </a>
+                {% if not forloop.last %}&nbsp;|&nbsp;{% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <hr />
+    <div>
+        <nav>
+            <a href="{% url 'page:home' %}">{% trans "Home" %}</a> |
+            <a href="#">{% trans "Categories" %}</a> |
+            <a href="#">{% trans "Articles" %}</a> |
+            <a href="#">{% trans "Contact" %}</a>
+        </nav>
+    </div>
     <div>
     {% block content %}{% endblock %}
     </div>
