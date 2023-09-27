@@ -7,6 +7,10 @@ from article.services.category_service import CategoryService
 
 
 class ArticleDetailView(DetailView):
+    """
+    Представление статьи
+    """
+
     model = Article
     template_name = 'article_detail.html'
     context_object_name = 'article'
@@ -17,6 +21,10 @@ class ArticleDetailView(DetailView):
 
 
 class ArticleListView(ListView):
+    """
+    Представление списка статей
+    """
+
     model = Article
     template_name = 'articles.html'
     context_object_name = 'articles'
@@ -28,6 +36,10 @@ class ArticleListView(ListView):
 
 
 class CategoryListView(ListView):
+    """
+    Представление списка категорий
+    """
+
     model = Category
     template_name = 'categories.html'
     context_object_name = 'categories'

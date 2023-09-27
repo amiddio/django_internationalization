@@ -2,6 +2,9 @@ from article.models import Article
 
 
 class ArticleService:
+    """
+    Промежуточный слой содержащий бизнес логику статей
+    """
 
     PAGE_LIMIT = 3
 

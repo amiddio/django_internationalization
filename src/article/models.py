@@ -5,6 +5,10 @@ from django.db import models
 
 
 class Category(TranslatableModel):
+    """
+    Модель категорий статей
+    """
+
     translations = TranslatedFields(
         name=models.CharField(max_length=50),
         slug=models.SlugField(max_length=50, unique=True),
@@ -19,6 +23,10 @@ class Category(TranslatableModel):
 
 
 class Article(TranslatableModel):
+    """
+    Модель статей
+    """
+
     class Status(models.IntegerChoices):
         DRAFT = (0, _('Draft'))
         PUBLISHED = (1, _('Published'))

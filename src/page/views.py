@@ -1,6 +1,9 @@
-from django.shortcuts import render
 from django.views.generic import TemplateView
 
 
 class HomeView(TemplateView):
+    """
+    Представление главной страницы
+    """
+
     template_name = 'index.html'
