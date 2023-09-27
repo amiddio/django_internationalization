@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-25 12:44+0000\n"
+"POT-Creation-Date: 2023-09-27 08:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,16 +26,20 @@ msgstr ""
 msgid "Published"
 msgstr ""
 
-#: config/settings.py:129
+#: config/settings.py:132
 msgid "English"
 msgstr ""
 
-#: config/settings.py:130
+#: config/settings.py:133
 msgid "Russian"
 msgstr ""
 
-#: config/settings.py:131
+#: config/settings.py:134
 msgid "Spanish"
+msgstr ""
+
+#: templates/article_detail.html:6 templates/includes/articles.html:9
+msgid "Category"
 msgstr ""
 
 #: templates/base.html:13
@@ -56,4 +60,8 @@ msgstr ""
 
 #: templates/base.html:31
 msgid "Contact"
+msgstr ""
+
+#: templates/includes/articles.html:20
+msgid "Articles not found"
 msgstr ""
