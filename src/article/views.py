@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import DetailView, ListView
 
-from article.models import Article
+from article.models import Article, Category
 from article.services.article_service import ArticleService
+from article.services.category_service import CategoryService
 
 
 class ArticleDetailView(DetailView):
@@ -22,4 +23,14 @@ class ArticleListView(ListView):
     paginate_by = ArticleService.PAGE_LIMIT
 
     def get_queryset(self):
-        return ArticleService.get_objects()
+        category_slug = self.kwargs.get('category_slug', None)
+        return ArticleService.get_objects(category_slug=category_slug)
+
+
+class CategoryListView(ListView):
+    model = Category
+    template_name = 'categories.html'
+    context_object_name = 'categories'
+
+    def get_queryset(self):
+        return CategoryService.get_objects()

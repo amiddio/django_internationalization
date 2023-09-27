@@ -1,4 +1,6 @@
 {% load i18n %}
+
+{% if articles %}
 {% for article in articles %}
 <div>
     <a href="{{ article.get_absolute_url }}">
@@ -9,3 +11,12 @@
     <div>{{ article.description|truncatewords:50 }}</div>
 </div>
 {% endfor %}
+<br/>
+{% if not hide_pagination %}
+    {% include "includes/pagination.html" %}
+{% endif %}
+{% else %}
+<div>
+    {% trans "Articles not found" %}
+</div>
+{% endif %}
